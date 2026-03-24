@@ -38,7 +38,7 @@ void loop() {
   }
   else if (valorGas > 2200 && valorGas <= 2700) {
     lcd.setCursor(0, 1);
-    lcd.print("RUIM)");
+    lcd.print("RUIM");
     digitalWrite(pinBuzzer, LOW);
   }
   else if (valorGas > 1500) {
