@@ -10,13 +10,14 @@ Projeto educacional que lê o sinal analógico de um módulo MQ-2, mostra uma cl
 |---|---|
 | Saída analógica do módulo MQ-2 | GPIO 34 |
 | Buzzer | GPIO 5 |
-| LCD 16x2 I2C | Endereço 0x27 |
+| LCD 16x2 I2C — SDA | GPIO 21 |
+| LCD 16x2 I2C — SCL | GPIO 22 |
 
 Confira a pinagem e a tensão de saída do seu módulo antes de conectá-lo ao ESP32. O GPIO do ESP32 não deve receber tensão acima do limite permitido pela placa.
 
 ## Funcionamento do código
 
-O sketch usa os pinos SDA e SCL padrão da placa selecionada na Arduino IDE. `0x27` é o endereço do LCD no barramento I²C.
+Com a placa `ESP32 Dev Module` selecionada na Arduino IDE, o sketch usa os pinos I²C padrão da placa. `0x27` é o endereço do LCD no barramento I²C.
 
 O ESP32 lê o GPIO 34 e compara o valor com faixas fixas. O LCD é atualizado a cada segundo e o valor bruto também aparece no Monitor Serial a 9600 baud.
 
@@ -31,13 +32,13 @@ Essas faixas são configurações do exemplo e podem variar conforme o sensor, o
 
 ## Bibliotecas
 
-Instale a biblioteca `LiquidCrystal_I2C` e selecione uma placa ESP32 compatível na Arduino IDE.
+Instale a biblioteca `LiquidCrystal_I2C` e selecione `ESP32 Dev Module` na Arduino IDE.
 
 ## Executar
 
 1. Abra [`SensorDeGas.ino`](SensorDeGas.ino) na Arduino IDE.
 2. Confira as ligações e o endereço I2C do LCD.
-3. Selecione a placa ESP32 e a porta correta.
+3. Selecione `ESP32 Dev Module` e a porta correta.
 4. Envie o programa e abra o Monitor Serial em 9600 baud.
 
 ## Possíveis melhorias
