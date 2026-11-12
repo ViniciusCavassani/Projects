@@ -16,6 +16,8 @@ Confira a pinagem e a tensão de saída do seu módulo antes de conectá-lo ao E
 
 ## Funcionamento do código
 
+O sketch usa os pinos SDA e SCL padrão da placa selecionada na Arduino IDE. `0x27` é o endereço do LCD no barramento I²C.
+
 O ESP32 lê o GPIO 34 e compara o valor com faixas fixas. O LCD é atualizado a cada segundo e o valor bruto também aparece no Monitor Serial a 9600 baud.
 
 | Leitura analógica | LCD | Buzzer |
@@ -33,7 +35,7 @@ Instale a biblioteca `LiquidCrystal_I2C` e selecione uma placa ESP32 compatível
 
 ## Executar
 
-1. Abra `SensorDeGas.ino` na Arduino IDE.
+1. Abra [`SensorDeGas.ino`](SensorDeGas.ino) na Arduino IDE.
 2. Confira as ligações e o endereço I2C do LCD.
 3. Selecione a placa ESP32 e a porta correta.
 4. Envie o programa e abra o Monitor Serial em 9600 baud.
